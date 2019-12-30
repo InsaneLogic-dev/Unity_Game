@@ -7,14 +7,12 @@ public class ElevatorTrigger : MonoBehaviour
     public bool canTrigger;
     enum MyDirection { Up, Down}
     [SerializeField]MyDirection myDirection;
-    // Start is called before the first frame update
     public Elevator_Controller eController;
     void Start()
     {
         eController = this.GetComponentInParent<Elevator_Controller>();
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
