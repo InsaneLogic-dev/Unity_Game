@@ -83,21 +83,21 @@ public class Elevator_Controller : MonoBehaviour
     private void ActivateElevator()
     {
         float step = speed * Time.deltaTime;
-        /*
+        
         if (ElevatorDirection)
             transform.position = new Vector3(transform.position.x, transform.position.y + 1f * step, transform.position.z);
         else if(!ElevatorDirection)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - 1f * step, transform.position.z);
         }
-    */    
+        
     Debug.Log("Distance from target is " + Vector3.Distance(transform.position, target));
-            transform.position = Vector3.MoveTowards(currentPosition, target, step);
+            //transform.position = Vector3.MoveTowards(currentPosition, target, step);
             
-        //if(Vector3.Distance(transform.position, target ) < 0.1f)
-        //{
-          //  Activate = false; 
-        //}
+        if(Vector3.Distance(transform.position, target ) < 0.1f)
+        {
+            Activate = false; 
+        }
     }
     public void SetDown()
     {
